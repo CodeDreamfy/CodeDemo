@@ -107,9 +107,9 @@ __自学前端指导书__
 	*	jquery
 	*	Lo-Dash
 *	框架
-*	backbone.js
-*	ember.js
-*	Angular.js
+	*	backbone.js
+	*	ember.js
+	*	Angular.js
 
 
 
