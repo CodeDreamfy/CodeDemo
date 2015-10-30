@@ -102,7 +102,7 @@ __自学前端指导书__
 	*	懒加载
 *	库
 	*	animate.css 
-	*	createjs & threejs
+	*	createjs & threejs & tweenMax
 	*	underscore.js
 	*	jquery
 	*	Lo-Dash
