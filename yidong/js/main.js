@@ -3,6 +3,7 @@ $(function(){
   var $newsOpt = $('.news-opt', $userMain);
   var $userOpt = $('.user-opt', $userMain);
 
+
   $userOpt.on('click', '.fazhan a', function(){
     tabOpt(this);
   })
@@ -18,8 +19,10 @@ $(function(){
   
 
   function tabOpt(obj){
-    $(obj).addClass('active').siblings().removeClass('active');
-    var _index = $(obj).index()+1;
+    var l = $(obj).position().left;
+    l == 0 ? -$(obj).position().right : l;
+    var _index = $(obj).data('tab');
+    $(obj).siblings('.active').stop().animate({left: l}, {easing:'easeOutBounce'} );
     $(obj).parent().next().find('[data-index='+_index+']').show().siblings().hide();
   }
 

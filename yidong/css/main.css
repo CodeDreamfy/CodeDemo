@@ -38,9 +38,9 @@ h1, h2, h3 { font-size: 12px; font-weight: normal;}
 .user-main .user-content li .time { float: right; color: #999;}
 
 /* user-tab */
-.user-main .user-tab { height: 54px; }
-.user-main .user-tab a { float: left; width: 25%; height: 54px; line-height: 54px; font-size: 18px; text-align: center; background: #e6e6e6;}
-.user-main .user-tab a.active { height: 51px; border-top: 3px solid #287ad5; background: #fff;}
+.user-main .user-tab { height: 54px; background: #e6e6e6;}
+.user-main .user-tab a { float: left; width: 25%; height: 54px; line-height: 54px; font-size: 18px; text-align: center; position: relative; z-index: 2;}
+.user-main .user-tab .active { width: 25%; height: 51px; border-top: 3px solid #287ad5; background: #fff; z-index: 1; top: 0; left: 0;}
 /* main */
 .user-main .header .top-user { height: 34px; border-bottom: 1px solid #ddd;}
 .user-main .header .top-user span { line-height: 34px; color: #666;}
@@ -79,6 +79,7 @@ h1, h2, h3 { font-size: 12px; font-weight: normal;}
 /* container */
 .user-main .container { margin-top: 34px;}
 .user-main .container .main { width: 798px;}
+.user-main .container .main .news-opt .user-tab .active,
 .user-main .container .main .news-opt .user-tab a { width: 266px;}
 
 .user-main .main .user-opt .content { padding: 0 24px;}
