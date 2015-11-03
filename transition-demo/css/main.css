@@ -1,0 +1,12 @@
+* { margin: 0; padding: 0;}
+body { background: #f1f1f1;}
+.wrapper { width: 800px; margin: 0 auto; border: 1px solid #999; height: 300px; position: relative;}
+.wrapper .box { 
+  width: 100px; height: 100px; 
+  background: green; 
+  position: absolute; top: 100px; left: 0; 
+  -webkit-transition: left 2s, background 2s;
+  -moz-transition: left 2s, background 2s;
+  transition: left 2s, background 2s;
+}
+.box.active { left: 700px; background: red;}
