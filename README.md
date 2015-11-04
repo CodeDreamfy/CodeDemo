@@ -99,6 +99,7 @@ __自学前端指导书__
 	*	fullpage
 	*	myCutomScroll
 	*	swiper2,3
+	*	fancybox
 	*	懒加载
 *	库
 	*	animate.css 
