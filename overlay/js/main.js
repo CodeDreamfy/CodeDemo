@@ -32,7 +32,7 @@ $.extend(Overlay.prototype, {
       overflow: 'hidden',
       zIndex: '10'
     };
-    var overlays= $('<div></div>').addClass('overlay').css(overlayStyle);
+    var overlays= $('<div></div>').addClass('overlay').css(overlayStyle); //返回匹配的元素集合，无论是通过在DOM的基础上传递的参数还是创建一个HTML字符串
     $('body').append(overlays);
     this.$elem = overlays;
     
@@ -78,7 +78,6 @@ $.extend(Overlay.prototype, {
   },
   showOverlay: function(){
     var _this = this;
-    console.log(this.$elem);
     this.$elem[this.effect.showAnimate]('fast', function(){
       _this.option.onShow();
     });
@@ -102,6 +101,13 @@ $.fn.overlay = function(opt){
 $(function(){
   var $btn = $('.btn');
   $btn.on('click', function(){
-    $(this).overlay({effect: 'fadeIn', opacity: 0.2, color: 'green'});
+    $(this).overlay({
+      effect: 'fadeIn', 
+      opacity: 0.2, 
+      color: 'green',
+      onShow: function(){
+        $('body').append('<span>this overlay ok</span>')
+      }
+    });
   })
 })
