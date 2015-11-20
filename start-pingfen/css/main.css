@@ -1,0 +1,89 @@
+/* 测试题目 */
+* { margin: 0; padding:0;}
+.rel { position: relative;}
+.abs { position: absolute;}
+.hide { display: none;}
+.box { width: 1000px; margin:0 auto; background: #f1f1f1;}
+
+.easy-test .overlay { opacity: 0.7;}
+.easy-test .container { background: none;}
+.easy-test .container .tips { color: #c7072c; width: 92px; font-size: 12px; top: 158px; left: 246px; z-index: 10; display: none;}
+.easy-test .step { width: 597px; }
+.easy-test .step-base .question { height: 211px; background: url(../images/bg2.png) no-repeat; padding: 54px 120px 64px 96px;}
+.easy-test .step-base .question .title { background: url(../images/test.png) no-repeat; height: 53px; display: inline-block; width: 100%;}
+.easy-test .step-base .question .start-item { padding-left: 36px;}
+.easy-test .step-base .question .start-item > a { background: url(../images/start.png) no-repeat 0 0; display: inline-block; width: 40px; height: 40px; padding-right: 22px;}
+.easy-test .step-base .question .start-item .active { background-position: 0 -48px;}
+.easy-test .step-base .question .start-item .last-start { margin-right: 0;}
+.easy-test .question .closes { width: 30px; height: 28px; top: 30px; right: 109px;}
+.easy-test .step-base .btn { top: 200px; right: 186px; z-index: 6;}
+.easy-test .step-base .progress { width: 334px; height: 55px; top: 245px; left: 112px; background: url(../images/carbg.png) no-repeat 0 0;}
+
+.easy-test .step-category .question { height: 155px; background: url(../images/bg.png) no-repeat;}
+
+
+
+/* 0 */
+.easy-test .step0 .question .txt1 { top: 66px; left: 130px; height: 54px; width: 316px; color: #f67739; font-size: 18px; background: url(../images/tit.png) no-repeat center bottom;}
+.easy-test .step0 .btn { top: 150px; width: 280px; left: 50%; margin-left: -140px; z-index: 6;}
+.easy-test .step0 .start-test { margin-right: 50px;}
+.easy-test .step0 .progress { background-position: 0 0;}
+
+
+/* 1 */
+.easy-test .step1 .question .title { background-position: 40px 0;}
+.easy-test .step1 .progress { background-position: 14px -70px;}
+
+/* 2 */
+.easy-test .step2 .question .title {  background-position: 52px -73px;}
+.easy-test .step2 .progress { background-position: 14px -139px;}
+
+/* 3 */
+.easy-test .step3 .question .title { background-position: 16px -144px;}
+.easy-test .step3 .progress { background-position: 14px -208px;}
+
+/* 4 */
+.easy-test .step4 .question .title { background-position: 32px -219px;}
+.easy-test .step4 .progress { background-position: 14px -277px;}
+
+/* 5 */
+.easy-test .step5 .question .title { background-position: 10px -285px;}
+.easy-test .step5 .progress { background-position: 14px -346px;}
+
+/* 6 */
+.easy-test .step6 .question .title { background-position: 50px -356px;}
+.easy-test .step6 .progress { background-position: 14px -418px;}
+
+/* 7 */
+.easy-test .step7 .question .title { background-position:  40px -423px;}
+.easy-test .step7 .progress { background-position: 14px -489px;}
+
+/* 8 */
+.easy-test .step8 .question .title { background-position:  26px -495px;}
+.easy-test .step8 .progress { background-position: 14px -561px;}
+
+/* 9 */
+.easy-test .step9 .question .title { background-position:  48px -558px;}
+.easy-test .step9 .progress { background-position: 14px -630px; }
+
+
+
+
+
+/* result */
+.easy-test .step-result .question { height: 155px; background: url(../images/bg.png) no-repeat;}
+.easy-test .step-base .question .title.result-tit { background: url(../images/result.png) no-repeat;}
+.easy-test .step-result .progress { background-position: 14px -630px;}
+.easy-test .step-result .btn { top: 148px; right: 240px;}
+.easy-test .step-result .btn  a { text-decoration: none; color: #442812; font-size: 14px; font-weight: bold;}
+.easy-test .step-result .btn  a:hover { color: #442812;}
+.easy-test .step-result .btn .btn-result { padding: 13px 37px; letter-spacing: 1px; width: 92px; height: 37px; background: url(../images/btn-bg.png) no-repeat; display: block; }
+
+/* 轻熟 */
+.easy-test .step-qingshu .question .title.result-tit { background-position: 32px 0;}
+
+/* 玩酷 */
+.easy-test .step-wanku .question .title.result-tit { background-position: 32px -64px;}
+
+/* 新声 */
+.easy-test .step-xinsheng .question .title.result-tit { background-position: 32px -124px;}

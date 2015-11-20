@@ -116,8 +116,8 @@ table th{ font-weight: normal;}
 .lunbo {  height: 336px; background: url(../images/slide/bg-2.jpg) repeat-x;}
 .lunbo .slide-wrap { width: 730px;}
 .lunbo .slide-box { width: 730px; overflow: hidden;} 
-.lunbo .slide-box ul { width: 5110px; position: relative; left: -730px;}
-.lunbo .slide-box ul li { width: 730px; height: 336px; float: left; }
+.lunbo .slide-box ul { width: 730px; height: 336px; position: relative;}
+.lunbo .slide-box ul li { width: 730px; height: 336px; position: absolute; top: 0; left: 0; display: none;}
 .lunbo .slide-wrap .small { width: 730px; text-align: center; bottom: 12px; left: 0;}
 .lunbo .slide-wrap .small a { margin-right: 18px; width: 6px; height: 6px; border: 1px solid #999; border-radius: 50%; display: inline-block; background-position: -4px -350px;}
 .lunbo .slide-wrap .small a:hover,
