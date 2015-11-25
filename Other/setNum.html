@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <style type="text/css" media="screen">
+    .box,.box1,.box2 { position: absolute; padding: 0 30px; line-height: 32px; top: 40%; left: 45%; background: #eee;}
+    .box { top: 38%;}
+  </style>
+  <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" ></script>
+</head>
+<body>
+  <span class="box" id="box"></span>
+  <span class="box1"></span>
+  <span class="box2"></span>
+
+  <script type="text/javascript">
+  //原生js
+  +function(){
+    var oBox = document.getElementById('box');
+    function changFromto(json){
+      var from = json.from;
+      var to = json.to;
+      var times = json.times;
+      var precision = json.precision | 1000/60;
+      var offset  = (to - from) * precision / times;
+
+      var interval = setInterval(function(){
+        from = from + offset;
+        form = from >= to ? to : from;
+        json.onUpdate(from);
+        if(from >= to){
+          clearInterval(interval);
+          return;
+        }
+      }, precision);
+    }
+    changFromto({
+      from: 0,
+      to: 100,
+      times: 10000,
+      precision: 1000/60,
+      onUpdate: function(value){
+        oBox.innerhtml = value.toFixed(2);
+      }
+    });
+  }();
+  //jquery版本
+  +function(){
+    var $box = $('.box1');
+    $('<div style="width:0px;"></div>').animate({
+      width:'100px'
+    },{
+      duration:10000,
+      step:function(){
+        $box.html($(this).width().toFixed(2));
+      },
+      complete: function(){
+        $box.html('100.00');
+      }
+    });
+
+  }()
+  </script>
+</body>
+</html>

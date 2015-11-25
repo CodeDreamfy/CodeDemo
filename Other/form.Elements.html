@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <style type="text/css">
+        body{ padding: 50px; font-size: 18px; }
+        form{ 
+            display: block; border: 1px solid #dfdfdf; padding: 5px 15px 5px 15px; 
+            width: 500px;
+        }
+        .item{ padding-bottom: 10px; padding-top: 10px; }
+        .item + .item{ border-top: 1px solid #dfdfdf;  }
+        textarea{ 
+            border: 1px solid #dfdfdf; width: 100%; resize:none; height: 100px; line-height: 24px;
+        }
+        .input-name{ border: 1px solid #dfdfdf; width: 300px; height: 24px; line-height: 24px; }
+        .button{ width: 100px; height: 40px; font-size: 22px; font-weight: bold; }
+        .json{
+            margin-top: 15px; word-wrap:break-word;
+            border: 1px solid #dfdfdf;  width: 500px; display: none; padding: 15px;
+        }
+    </style>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" ></script>
+</head>
+<body>
+      <form>
+        <div class="item">
+            <label>
+                <input class="input-name" type="text" name="name" value "" placeholder="请输入名称" />
+            </label>
+        </div>
+        <div class="item">
+            <label>
+                <input type="radio" name="sex" value="1">男
+            </label>
+            <label>
+                <input type="radio" name="sex" value="2">女
+            </label>
+        </div>
+        <div class="item">
+            <label>
+                <input type="checkbox" name="hobby" value="1">骑车
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="2">上网
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="3">玩游戏
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="4">听音乐
+            </label>
+        </div>
+        <div class="item">
+            <textarea name="detailed" placeholder="请输入个人介绍"></textarea>
+        </div>
+        <div class="item">
+            <select name="age">
+                <option value="70">70后</option>
+                <option value="80">80后</option>
+                <option value="90">90后</option>
+                <option value="00">00后</option>
+            </select>
+        </div>
+        <div class="item">
+            <input class="button" type="button" value="确定" />
+        </div>
+    </form>
+    <div class="json">
+        
+    </div>
+    <script type="text/javascript">
+    $(function(){
+        $("body").on("click",".button",function(){
+          console.log(this.form);
+            var data = formData(this.form);
+
+            $(".json").show().html(JSON.stringify(data));
+        });
+    });
+    var formData = function(form) {
+    var elements = form.elements,
+        data = {};
+    for (var key in elements) {
+        var item = elements[key];
+        item.name && (data[item.name] = item);
+    }
+    for (var key in data) {
+        var item = data[key];
+        if (typeof item == "function") {
+          delete data[key];
+        } else {
+            //特别处理多选框
+            if (item.type == "checkbox") {
+                var input = $(elements[key]).filter(":checked");
+                var value = [];
+                $.each(input, function(i, ele) {
+                    value.push(ele.value);
+                });
+                data[key] = value;
+            } else {
+                elements[key] && (data[key] = elements[key].value);
+            }
+        }
+    }
+  return data;
+};
+
+    </script>
+
+</body>
+</html>
