@@ -1,0 +1,19 @@
+{
+  "name": "renault",
+  "version": "1.0.0",
+  "description": "renault",
+  "main": "main.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "author": "tangsj",
+  "license": "ISC",
+  "devDependencies": {
+    "csswring": "^4.0.0",
+    "gulp": "^3.9.0",
+    "gulp-postcss": "^6.0.1",
+    "gulp-rename": "^1.2.2",
+    "postcss": "^5.0.11",
+    "px2rem": "^0.4.1"
+  }
+}

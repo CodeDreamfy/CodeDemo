@@ -1,0 +1,25 @@
+/* reset */
+body,h1,h2,p,ul{ margin: 0; padding: 0;}
+body { font: 12px/150% Arial,Verdana,"\5b8b\4f53"; color: #666; background: #fff;}
+a { text-decoration: none; color: #666;}
+a:hover { color: #C81623;}
+s { text-decoration: none;}
+i { font-style: normal;}
+
+/* utils */
+.fl { float: left;}
+.fr { float: right;}
+.clearfix { *zoom:1;}
+.clearfix:after { content: ''; display: table; clear: both;}
+
+
+/* common */
+.wrapper { width: 1210px; margin: 0 auto;}
+
+
+/* container */
+#shortcut { height: 30px; background: #f1f1f1;}
+#shortcut .dqbox { padding-left: 10px;}
+#shortcut .dqbox .dq { height: 30px; line-height: 30px;}
+#shortcut .dqbox .dq i { margin-left: 5px; width: 18px;  height: 8px; line-height: 16px;display: inline-block; position: relative; overflow: hidden;}
+#shortcut .dqbox .dq i > s { top: -8px; left: 0; font-size: 28px; position: absolute; color: #6a6a6a; animation: arowrotate ;}

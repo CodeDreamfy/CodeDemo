@@ -1,0 +1,26 @@
+/* reset */
+body { font: 12px/1.5 "Helvetica Neue", "Microsoft Yahei", "Hiragino Sans GB", "WenQuanYi Micro Hei", "sans-serif"; color: #333;}
+body,h1,h2,p,ul,input,select { margin: 0; padding: 0;}
+a { text-decoration: none; color: #444;}
+h1,h2 { font-size: 100%; font-weight: normal;}
+em,i { font-weight: normal; font-style: normal;}
+
+/* utils */
+.fl {float: left;}
+.fr {float: right;}
+.rel {position: relative;}
+.abs {position: absolute;}
+.clearfix {*zoom:1;}
+.clearfix:after { display: table; content: ''; clear: both;}
+
+/* main */
+#main {  width: 640px; height: 1596px; overflow: auto; background: url(../images/bg.jpg) no-repeat; background-size: cover;}
+#main .content { margin-top: 440px;}
+
+.icon-male {background-position: 0px 0px;}
+.icon-phone {background-position: 0px -40px;}
+.icon-car {background-position: 0px -84px;}
+.icon-arrow {background-position: 0px -122px;}
+
+
+

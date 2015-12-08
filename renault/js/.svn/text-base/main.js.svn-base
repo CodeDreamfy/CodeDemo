@@ -1,0 +1,368 @@
+// common
+//专营店编码 数组
+var vinArr = ["20997","21750","21751","21506","21700","25139","07512","07523","20103","21011","21752","03520","10200","07524","21678","21131","07260","25014","25015","25138","21666","25140","21132","25056","21018","21689","21133","21748","25176","01300","03540","07600","07080","01321","25175","07539","21012","21136","25171","25172","25133","25173","07506","07521","07535","21688","25188","21017","09780","07530","20995","25137","03840","06380","07510","20095","20996","25011","01140","05380","07511","21126","25010","01160","02400","25136","21753","07538","20023","25029","21684","01322","07460","07502","25025","25189","01080","21137","03260","07527","25135","25194","21147","07509","07537","21504","21731","03360","25134","07240","07513","07507","07508","07543","21129","21130","21690","25141","01120","07920","07940","08700","07520","07519","01323","07534","07528","07544"];
+
+var path = 'http://112.74.77.179:8008/ajax/Renault/RenaultWebService.asmx/';
+
+function play(){
+    var audio = document.getElementById('audio');
+    audio.play();
+}
+
+
+//判断专营店编码是否正确
+function isInVin(vin){
+  if(vinArr.indexOf(vin) != -1){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+function ajax(url, param, success, error ,before){
+    $.ajax({
+      url: url + "?callback=?",
+      type: "post",
+      dataType: "jsonp",
+      data: { param: JSON.stringify(param) },
+      success: success,
+      error: error,
+      beforeSend: before
+    });
+}
+function getParam() {
+ var url = location.search; //获取url中"?"符后的字串
+  var param = {};
+  if (url.indexOf("?") != -1) {
+     var str = url.substr(1);
+     strs = str.split("&");
+     for(var i = 0; i < strs.length; i ++) {
+        param[strs[i].split("=")[0]]=(strs[i].split("=")[1]);
+     }
+  }
+  return param;
+}
+
+
+
+var $page = $('.page');
+var $page3 = $('.page3');
+var $page4= $('.page4');
+var hashStr,shake_flag = false;
+
+//测试
+//var openid = getParam().openid + new Date().getTime();
+//$.cookie('getCard',null);
+//var card_cookie = '';
+//测试end
+var openid = getParam().openid;
+var card_cookie = $.cookie('getCard');
+
+history.replaceState(null,'',location.pathname+location.search);
+
+//雪花动画
+var timer;
+/*function snowPlay(){  
+  var isHide = $('.page1').hasClass('hide');
+  if(isHide){
+    clearInterval(timer);
+  }else{
+    timer = setInterval(function(){
+      var cur = parseInt($('#snow').css('backgroundPosition').split(' ')[1]);
+      $('#snow').css({
+        'background-position': '0px '+(cur+3)+'px'
+      });
+    }, 30);
+  }
+}
+snowPlay();*/
+
+// 中奖信息
+var isPrize = undefined;
+var global_prize = undefined;
++(function (){
+    var url = path + 'GetPrize';
+    var param = {
+        openid: openid
+    };
+    ajax(url, param, function(data){
+      data = JSON.parse(data.result);
+      if(data.prizelv){
+        isPrize = data.prizelv;
+        // 填充我的奖品信息
+        if(data.prizelv == 1){
+          $('.second-prize,.third-prize').hide();
+          $('.first-prize').show();
+        }else if(data.prizelv == 2){
+          $('.first-prize,.third-prize').hide();
+        }else if(data.prizelv == 3){
+            $('.third-prize').show();
+            $('.second-prize,.first-prize').hide();
+            var name = $.cookie('cardName');
+            var price = $.cookie('cardPrice');
+            $('.cardtxt').html(name + '<strong>' + price + '元</strong>');
+        }
+      }else{
+        isPrize = undefined;
+      }
+  });
+})();
+
+// a标签点击页面切换
++function(){
+  $('.jumpbtn').on('click',function(){
+    var hash = $(this).data('hash');
+    var text = $(this).data('text');
+    card_cookie = Boolean(card_cookie);
+    if(isPrize == undefined && hash){alert('加载中请稍等');return false;}
+    if(isPrize == '3' && hash == '4' && !card_cookie){
+      location.hash = '4';
+    }else if(isPrize != '3' && hash == '3'){
+        location.hash = "3";
+    }else if((isPrize == '3' && hash =='4' && card_cookie) || (isPrize && isPrize != '3')){
+      alert('你已经抽过奖了，请查看我的奖品');
+      return false;
+    }
+    if(isPrize == '3' && hash == "3" && !card_cookie){
+      alert('你还没奖品，赶快抽奖吧');
+    }else if(card_cookie){
+      location.hash = "3";
+    }
+  });
+}();
+
+//页面切换
+window.onhashchange = function(){
+    var hashStr = location.hash.replace('#','');
+    if(!hashStr){
+        $page.addClass('hide').eq(0).removeClass('hide');
+        //snowPlay();
+    }else{
+        $page.addClass('hide').eq(hashStr - 1).removeClass('hide');
+        clearInterval(timer);
+    }
+    //摇一摇
+    // alert(hashStr);
+    // alert(shake_flag);
+    // alert(isPrize)
+    if(hashStr == '4' && !shake_flag && isPrize == '3' && !card_cookie){
+      game_shake();
+    }else if(card_cookie && hashStr == '4'){
+      alert('您已经领取过奖品！谢谢参与返回首页查看您的奖品');
+      location.hash = '';
+    }
+}
+
+// 摇一摇中奖
+// 卡券信息
+var shake_cardinfo;
+var readyFunc=function onBridgeReady(cb){
+    $.ajax({
+        type: "GET",
+        dataType: "jsonp",
+        url: "http://app.hocodo.com/webapps/weixin_renault/coupon/checkinventory2.php?callback=?",
+        async: false,        
+        success: cb
+     }) //end of ajax: 
+}
+
+if (typeof WeixinJSBridge === "undefined") {
+  document.addEventListener('WeixinJSBridgeReady', function(){
+    readyFunc(function(data){
+      shake_cardinfo = data;
+      cardName = data.cardname;//300days 
+      cardPrice = data.price;//300days
+      $('#sdj .three-p').html(data.cardname + '<strong>' + data.price + '</strong>');
+      $('.cardtxt',$page3).html(data.cardname + '<strong>' + data.price+ '元</strong>');
+    });
+  }, false);
+} else {
+  readyFunc(function(data){
+    shake_cardinfo = data;
+    cardName = data.cardname;//300days 
+    cardPrice = data.price;//300days 
+    $('#sdj .three-p').html(data.cardname + '<strong>' + data.price + '</strong>');
+    $('.cardtxt',$page3).html(data.cardname + '<strong>' + data.price+ '元</strong>');
+  });
+}
+
+$('#sdj .ybtn').on('touchstart click',function(e){ 
+  if(!shake_cardinfo)return false;
+  if($.cookie('getCard')=='got')return false;
+  WeixinJSBridge.invoke('batchAddCard', {//OuterId 领取场景值，用于领取渠道数据统计。 
+  "card_list": [{"outer_id":5,"card_id": shake_cardinfo.card,//卡券id 
+  "card_ext":"{\"code\":\"\",\"openid\":\"\",\"timestamp\":\""+shake_cardinfo.timestamp+"\",\"signature\":\""+shake_cardinfo.signature+"\"}"
+  }]},function(res) {     
+
+     // if(res["err_msg"]=="batch_add_card:cancel"){//如果客户取消领取}
+      if(res["err_msg"]=="batch_add_card:ok"){//如果客户真的领取成功了
+        alert("领取成功");
+        $.cookie('getCard', 'got', { expires: 300 });//300days 
+        $.cookie('cardName', cardName, { expires: 300 });//300days 
+        $.cookie('cardPrice',cardPrice, { expires: 300 });//300days 
+        card_cookie = 'got';
+        $('.second-prize,.first-priz').hide();
+        $('.third-priz').show();
+        isPrize = 3;
+      }
+  })
+});
+
+
+
+var cardName = '';
+var cardPrice = '';
+function game_shake(){
+    TweenLite.set($('.shake-box .top,.title',$page4),{y:"0",force3D:true});
+    TweenLite.set($('.shake-box .bottom',$page4),{y:"0",force3D:true});
+    shake_flag = true;
+    Shake(function(){
+        var url = path + "Lucky";
+        var param = {
+            openid:openid
+        };
+        if(shake_flag && location.hash == "#4"){
+            // TweenLite.to($('.shake-box .top,.title',$page4), 0.5,{y:"-=20",force3D:true});
+            // TweenLite.to($('.shake-box .bottom',$page4), 0.5,{y:"+=20",force3D:true});
+            play();
+            $('.shake-box',$page4).addClass('shake');
+          ajax(url,param,function(data){
+
+              $('.page-5 .txt-wrap').hide();
+              $('.page-5-wrap').show();
+              $('.sm-wrap').hide();
+
+              var _data = JSON.parse(data.result);
+              if(_data.prizelv == 1){
+                global_prize = 1;
+                $('#ydj').show();
+              }
+              else if(_data.prizelv == 2){
+                global_prize = 2
+                $('.sm-wrap .three-p2').text('多功能汽车轮胎压力计');
+                $('#edj').show();
+              }
+              else if(_data.prizelv == 3){
+                
+                $('#sdj').show();
+              }
+              //播放动画
+              // TweenLite.set($('.shake-box .top,.title',$page4),{y:"0",force3D:true});
+              // TweenLite.set($('.shake-box .bottom',$page4),{y:"0",force3D:true});
+              shake_flag = false;
+              setTimeout(function(){
+                  // 中奖页显示
+                  location.hash = 5;
+                  $('.shake-box',$page4).removeClass('shake');
+              },2000);
+          },function(){
+              alert('请重新抽奖');
+              shake_flag = false;
+              // TweenLite.set($('.shake-box .top,.title',$page4),{y:"0",force3D:true});
+              // TweenLite.set($('.shake-box .bottom',$page4),{y:"0",force3D:true});
+          },function(){
+            shake_flag = false;
+          });
+        }
+    });
+}
+//中奖留资
+$(function(){
+  $('.lzform').on('submit', function(){
+    var username = $.trim($('#name').val());
+    var phone = $.trim($('#tel').val());
+    var vin = $.trim($('#vinId').val());
+    var phoneReg = !!phone.match(/^(0|86|17951)?(13[0-9]|15[012356789]|17[0-9]|18[0-9]|14[57])[0-9]{8}$/);
+    if(username == ""){
+      alert('用户名不能为空！');
+      return false;
+    }
+    if(phone == ''){
+      alert('电话不能为空！');
+      return false;
+    }
+    if(vin == ''){
+      alert('专营店编码不能为空！');
+      return false;
+    }
+    if(!isInVin(vin)){
+      alert('专营店编码错误');
+      return false;
+    }
+
+    if(phoneReg == false){
+      alert('手机号码不对！');
+      return false;
+    }
+    var param = {
+      username: username,
+      phone: phone,
+      vin: vin,
+      openid: openid
+    }
+    var url = path + 'OrderInfo';
+
+    ajax(url, param, function(data){
+      if(data.result > 0){
+        alert('留资成功！');
+        location.hash = "";
+        isPrize = global_prize;
+        if(isPrize == 2){
+          $('.second-prize').show();
+          $('.first-priz,.third-prize').hide();
+        }else if(isPrize == 1){
+          $('.second-prize,.third-prize').hide();
+          $('.first-prize').show();
+        }
+      }else if(data.result == 0){
+        alert('留资失败请重试！');
+      }else{
+        alert('系统错误，请重试！');
+      }
+    });
+    return false;
+  });
+
+  //一等奖跳转到留资页面
+  $('.lzbtn').on('click', function(){
+    $(this).closest('.page-5-wrap').hide().siblings('.sm-wrap').show();
+  });
+  //分享给朋友
+  $('.myshare').on('click', function(){
+    $('.share-mask').show();
+    return false;
+  });
+  $('.share-mask').on('click', function(){
+    $(this).hide();
+  });
+
+
+  //雪花效果2
+  $("#snow1").let_it_snow({
+    speed: 1, // How fast the snow falls can be define here. You can choose a number in between 0 - 5. The higher, the faster. The default value is 0.
+    interaction: false, // This option allows viewer to interact with the falling snow. Toggle this to false if you don't want the snow to be interactive. The default value is true.
+    size: 35, // You can set the size of the snow here. Choose a number between 0 - 10+. The higher, the bigger. The default size is 2.
+    count: 2, // This allows you to set the number of snows displayed at a time. The default count is 200.
+    opacity: 0, // The opacity variation of the snow. You can choose a number in between 0.00 and 1.00 to set the base opacity and the plugin will randomly generate snows with slightly varied opacity.
+    windPower: 0, // You can set the wind power here. If you want the wind to blow left, set a positive number in this option., if you want the wind to blow right, set a negative number in this option. The default value is 0.
+    image: "images/page1/snow1.png" // You can define a path to an image to be used instead of a default circle here. The default value is false.
+  });
+  $("#snow2").let_it_snow({
+    speed: 1, // How fast the snow falls can be define here. You can choose a number in between 0 - 5. The higher, the faster. The default value is 0.
+    interaction: false, // This option allows viewer to interact with the falling snow. Toggle this to false if you don't want the snow to be interactive. The default value is true.
+    size: 20, // You can set the size of the snow here. Choose a number between 0 - 10+. The higher, the bigger. The default size is 2.
+    count: 2, // This allows you to set the number of snows displayed at a time. The default count is 200.
+    opacity: 0, // The opacity variation of the snow. You can choose a number in between 0.00 and 1.00 to set the base opacity and the plugin will randomly generate snows with slightly varied opacity.
+    windPower: 0, // You can set the wind power here. If you want the wind to blow left, set a positive number in this option., if you want the wind to blow right, set a negative number in this option. The default value is 0.
+    image: "images/page1/snow2.png" // You can define a path to an image to be used instead of a default circle here. The default value is false.
+  });
+  $("#snow3").let_it_snow({
+    speed: 1, // How fast the snow falls can be define here. You can choose a number in between 0 - 5. The higher, the faster. The default value is 0.
+    interaction: false, // This option allows viewer to interact with the falling snow. Toggle this to false if you don't want the snow to be interactive. The default value is true.
+    size: 15, // You can set the size of the snow here. Choose a number between 0 - 10+. The higher, the bigger. The default size is 2.
+    count: 2, // This allows you to set the number of snows displayed at a time. The default count is 200.
+    opacity: 0, // The opacity variation of the snow. You can choose a number in between 0.00 and 1.00 to set the base opacity and the plugin will randomly generate snows with slightly varied opacity.
+    windPower: 0, // You can set the wind power here. If you want the wind to blow left, set a positive number in this option., if you want the wind to blow right, set a negative number in this option. The default value is 0.
+    image: "images/page1/snow3.png" // You can define a path to an image to be used instead of a default circle here. The default value is false.
+  });
+});

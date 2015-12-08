@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Canvas01</title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <h1>canvas01</h1>
+  <canvas id="canvas" width="400" height="300"></canvas>
+  <script type="text/javascript">
+  var oCanvas = document.getElementById('canvas');
+  var context = oCanvas.getContext('2d');
+  context.fillStyle = "#f1f1f1";
+  context.fillRect(0,0,400,300);
+  context.fillStyle = '#dd3fee';
+  context.strokeStyle = 'rgba(0,0,0,.5)';
+  context.lineWidth = 2;
+  context.fillRect(100,100,80,80);
+  context.strokeRect(100,100,80,80);
+  context.beginPath();
+  context.arc(140,80,20,0,360);
+  context.closePath();
+  context.fillStyle = 'rgba(0,0,0,.5)';
+  context.fill();
+  context.beginPath();
+  context.moveTo(100,100);
+  context.lineTo(30,100);
+  context.lineTo(30,130);
+  context.lineTo(100,130);
+  context.closePath();
+  context.lineWidth = 2;
+  //context.lineCap = 'round';
+  context.strokeStyle='red';
+  context.stroke();
+  context.beginPath();
+  context.moveTo(200,100);
+  context.arcTo(230,100,280,130,30);
+  context.lineTo(280,160);
+  context.strokeStyle = 'blue';
+  context.stroke();
+  </script>
+</body>
+</html>

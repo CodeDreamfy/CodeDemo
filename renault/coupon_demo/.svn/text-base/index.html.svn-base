@@ -1,0 +1,79 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>卡券测试</title>
+ 
+    
+     <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.cookie.js"></script>
+    
+     <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  
+</head>
+<body>
+
+<div id=hint></div>
+
+<hr>
+
+
+<input type=button id=mybtn value="get coupon" />
+    
+    
+    
+<script> 
+
+
+
+ 
+
+var cardinfo;
+var readyFunc=function onBridgeReady(){
+    
+    $.ajax({
+        type: "GET",
+        dataType: "jsonp",
+        url: "http://app.hocodo.com/webapps/weixin_renault/coupon/checkinventory2.php?callback=?",
+        async: false,        
+        success: function (data) {
+               $('#hint').html(data.cardname);               
+               cardinfo=data;
+                //alert(data.cardname)
+              
+        }
+     }) //end of ajax: 
+}
+
+ 
+if (typeof WeixinJSBridge === "undefined") {
+  document.addEventListener('WeixinJSBridgeReady', readyFunc, false);
+} else {
+   readyFunc();
+} 
+    
+    
+
+$('#mybtn').on('touchstart click',function(e){ 
+                if(!cardinfo)return false;
+                WeixinJSBridge.invoke('batchAddCard', {//OuterId 领取场景值，用于领取渠道数据统计。 
+                "card_list": [{"outer_id":5,"card_id": cardinfo.card,//卡券id 
+                "card_ext":"{\"code\":\"\",\"openid\":\"\",\"timestamp\":\""+cardinfo.timestamp+"\",\"signature\":\""+cardinfo.signature+"\"}"
+                }]},function(res) {                   
+                   // if(res["err_msg"]=="batch_add_card:cancel"){//如果客户取消领取}
+                    if(res["err_msg"]=="batch_add_card:ok")//如果客户真的领取成功了
+                    $.cookie('getCard', 'got', { expires: 300 });//300days 
+                }) 
+            
+                    //////////////////////////////////////////////////
+   })//end of click
+
+ 
+</script>
+
+ <script type="text/javascript" src="share.js"></script>
+</body>
+</html>
