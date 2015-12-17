@@ -1,6 +1,8 @@
 $(function(){
   var timer;
   var $xmintro = $('.container .xmintro .contentBox');
+  var $lcdTablist = $('.xmlcd .tablist');
+  var $lcdContent = $('.xmlcd .content');
   var $win = $(window);
   var wintop = $win.scrollTop();
   $(window).on('scroll', function(){
@@ -13,6 +15,10 @@ $(function(){
         $xmintro.find('.over-body').addClass('end');
       }
     }, 400);
+  });
+  $lcdTablist.on('click', 'li', function(){
+    var index = $(this).index();
+    $lcdContent.children().hide().eq(index).show();
   })
 })
 

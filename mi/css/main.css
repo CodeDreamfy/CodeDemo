@@ -79,7 +79,7 @@ a { text-decoration: none; color: #424242;}
 .xmSlideWrap .peizhi .content-list li.item7 .icon { background-position: -128px -64px;}
 .xmSlideWrap .peizhi .content-list li.item8 .icon { background-position: -192px -64px;}
 
-.container > div { font-size: 16px; color: #424242; -webkit-font-smoothing: antialiased;}
+.container > div { font-size: 16px; color: #424242; font-weight: 200; -webkit-font-smoothing: antialiased;}
 .container .xmintro .contentBox { width: 1226px; height: 1285px; margin: 0 auto; overflow: hidden;}
 .xmintro .contentBox .over-body { transition: all .8s; -webkit-transition: all 2s; top: 60%; left: 60%; opacity: 0; width: 1364px; height: 1112px; margin: -528px 0 0 -682px; background: url(../images/overall-body.jpg) no-repeat; background-size: contain; z-index: 1;}
 .xmintro .contentBox .over-body.end { top: 50%; left: 50%; opacity: 1;}
@@ -112,14 +112,42 @@ a { text-decoration: none; color: #424242;}
 }
 
 .container .xmlcd { background: #f5f5f5;}
-.container .xmlcd .contentBox { width: 1226px; margin: 0 auto; padding-top: 100px; overflow: hidden; height: 1080px;}
+.container .xmlcd .contentBox { width: 1226px; margin: 0 auto; padding-top: 100px; height: 1080px;}
 .xmlcd .contentBox .tablist { border: 1px solid #e0e0e0; margin: 0 auto 50px; width: 364px;}
 .xmlcd .contentBox .tablist li { float: left; width: 50%; background: #e0e0e0; color: #212121;}
 .xmlcd .contentBox .tablist li a { display: block; text-align: center; height: 40px; line-height: 40px; font-size: 14px;}
 .xmlcd .contentBox .tablist li.tab-active { color: #fff; background: #fff;}
 .xmlcd .contentBox .content { text-align: center;}
-.xmlcd .contentBox .content .one {}
-.xmlcd .contentBox .content .two { display: none;}
+.xmlcd .contentBox .content .one { height: 990px;}
+.xmlcd .contentBox .content .two { display: none;  height: 990px;}
+.xmlcd .contentBox .content-desc .title { font-size: 40px; line-height: 1.25; margin-bottom: 20px; font-weight: 200;}
+.xmlcd .contentBox .content-desc .subtitle { font-size: 20px; line-height: 1.25; margin-top: -15px; margin-bottom: 30px; color: #757575; font-weight: 200;}
+.xmlcd .contentBox .content-desc .text { width: 744px; margin: 0 auto 20px;}
+.xmlcd .contentBox .content-desc .text .desc { color: #757575; line-height: 1.8; font-weight: 400; color: #424242;}
+.xmlcd .contentBox .content-desc .text .desc a { color: #ff3d00;}
+.xmlcd .contentBox .content-desc .subdesc { font-size: 12px; margin-top: -15px; margin-bottom: 30px;}
+.xmlcd .contentBox .content-desc .canshu { width: 900px; margin: 0 auto;}
+.xmlcd .contentBox .content-desc .canshu li { float: left; width: 224px; font-size: 14px; border-right: 1px solid #e0e0e0; color: #616161; }
+.xmlcd .contentBox .content-desc .canshu li:last-child { border-right: none;}
+.xmlcd .contentBox .content-desc .canshu li span { display: block; text-align: center; font-size: 40px;}
+.xmlcd .contentBox .content-desc .canshu li span em { font-size: 12px;}
+.xmlcd .contentBox .one .lcdbg,
+.xmlcd .contentBox .two .lcdbg { width: 1968px; height: 524px; bottom: 0; left: -1968px; z-index: 5;}
+.xmlcd .contentBox .two .lcdbg { width: 1956px; left: -1956px; }
+.xmlcd .contentBox .content .lcdbg.visited { left: -652px;}
+.xmlcd .contentBox .content .lcdbg.visited { left: -666px;}
+.xmlcd .contentBox .content .one .lcdbg { background: url(../images/overall-screen1.jpg) no-repeat;}
+.xmlcd .contentBox .content .two .lcdbg { background: url(../images/overall-screen2.jpg) no-repeat;}
+
+
+
+
+
+
+
+
+
+
 
 
 
