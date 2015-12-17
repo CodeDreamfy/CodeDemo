@@ -1,6 +1,6 @@
 /* reset */
 body { font: 14px/1.5 "Helvetica Neue", "Microsoft Yahei", "Hiragino Sans GB", "WenQuanYi Micro Hei", "sans-serif"; color: #333;}
-body,h1,h2,input,p,ul,li { margin: 0; padding:0;}
+body,h1,h2,h3,input,p,ul,li { margin: 0; padding:0;}
 ul { list-style: none;}
 h1,h2,h3 { font-weight: normal; font-size: 100%; line-height: 100%; color: #424242;}
 em { font-style: normal;}
@@ -11,7 +11,7 @@ a { text-decoration: none; color: #424242;}
 .rel { position: relative;}
 .abs  { position: absolute;}
 .clearfix { *zoom: 1;}
-.clearfix:after { content: '.'; display: table; clear: both;}
+.clearfix:after { content: ''; display: table; clear: both;}
 
 /* common */
 
@@ -44,7 +44,7 @@ a { text-decoration: none; color: #424242;}
 .textbox .content .playVideoBox .playVideo { display: inline-block; padding-left: 30px; background: url(../images/icon-play.png) no-repeat left 0; line-height: 24px; color: #ff3d00; font-size: 16px;}
 .textbox .content .playVideoBox .playVideo:hover { background: url(../images/icon-play.png) no-repeat left -24px;}
 
-.container { -webkit-font-smoothing: antialiased}
+.container { -webkit-font-smoothing: antialiased; width: 100%; overflow: hidden;}
 .xmSlideWrap { text-align: center;}
 .xmSlideWrap .xmSlideControl { overflow: hidden; height: 1300px;}
 .xmSlideWrap .xmSlideControl .slide { position: absolute; width: 100%; height: 1100px; height: 1000px; top: 0; left: 0; display: none; z-index: 1; opacity: 1;}
@@ -78,6 +78,48 @@ a { text-decoration: none; color: #424242;}
 .xmSlideWrap .peizhi .content-list li.item6 .icon { background-position: -64px -64px;}
 .xmSlideWrap .peizhi .content-list li.item7 .icon { background-position: -128px -64px;}
 .xmSlideWrap .peizhi .content-list li.item8 .icon { background-position: -192px -64px;}
+
+.container > div { font-size: 16px; color: #424242; -webkit-font-smoothing: antialiased;}
+.container .xmintro .contentBox { width: 1226px; height: 1285px; margin: 0 auto; overflow: hidden;}
+.xmintro .contentBox .over-body { transition: all .8s; -webkit-transition: all 2s; top: 60%; left: 60%; opacity: 0; width: 1364px; height: 1112px; margin: -528px 0 0 -682px; background: url(../images/overall-body.jpg) no-repeat; background-size: contain; z-index: 1;}
+.xmintro .contentBox .over-body.end { top: 50%; left: 50%; opacity: 1;}
+.xmintro .contentBox .textOne { top: 100px; right: 62px; width: 400px; z-index: 2;}
+.xmintro .contentBox .textTwo { width: 480px; left: 62px; bottom: 150px; z-index: 2;}
+.xmintro .contentBox .textOne .title,
+.xmintro .contentBox .textTwo .title { font-size: 40px; line-height: 1.25; font-weight: 100; color: #424242;}
+.xmintro .contentBox .textOne .subtitle { font-size: 24px; line-height: 1.25; white-space: pre; font-weight: 100; color: #757575; margin-bottom: 30px;}
+.xmintro .contentBox .textTwo .desc,
+.xmintro .contentBox .textOne .desc { line-height: 1.875; margin-bottom: 30px; font-size: 16px;}
+.xmintro .contentBox .textOne .links a { margin-right: 12px; display: inline-block; color: #ff3d00; font-size: 16px;}
+.xmintro .contentBox .textOne .links a:hover { text-decoration: underline;}
+.xmintro .contentBox .textTwo .peizhi { margin: 20px 0 40px; }
+.xmintro .textTwo .peizhi .biaozhun,
+.xmintro .textTwo .peizhi .dingpei { width: 198px; padding: 18px 0; border: 1px solid #bdbdbd; color: #333;}
+.xmintro .textTwo .peizhi .biaozhun .p-title,
+.xmintro .textTwo .peizhi .dingpei .p-title { padding: 0 6px; background: #fff; width: 60px; text-align: center; top: -10px; left: 50%; line-height: 20px; margin-left: -38px;}
+.xmintro .textTwo .peizhi .dingpei .p-name,.xmintro .textTwo .peizhi .dingpei .p-canshu,
+.xmintro .textTwo .peizhi .biaozhun .p-name, .xmintro .textTwo .peizhi .biaozhun .p-canshu { width: 99px; line-height: 20px; text-align: center; display: inline-block;}
+.xmintro .textTwo .peizhi .dingpei .p-name,
+.xmintro .textTwo .peizhi .biaozhun .p-name { margin-left: -1px; border-right: 1px solid #bdbdbd;}
+.xmintro .textTwo .peizhi .dingpei { border-color: #d5ac31;  color: #c09411;}
+.xmintro .textTwo .peizhi .dingpei .p-name { border-right-color: #d5ac31;}
+.xmintro .textTwo .more { color: #ff3d00; font-size: 16px;}
+.xmintro .textTwo .more:hover { text-decoration: underline;}
+@media (min-width: 1660px){
+  .container .xmintro .contentBox { width: 1612px;}
+  .container .xmintro .contentBox .textOne { top: 150px; right: 124px; width: 496px;}
+  .container .xmintro .contentBox .textTwo { left: 124px; bottom: 240px; }
+}
+
+.container .xmlcd { background: #f5f5f5;}
+.container .xmlcd .contentBox { width: 1226px; margin: 0 auto; padding-top: 100px; overflow: hidden; height: 1080px;}
+.xmlcd .contentBox .tablist { border: 1px solid #e0e0e0; margin: 0 auto 50px; width: 364px;}
+.xmlcd .contentBox .tablist li { float: left; width: 50%; background: #e0e0e0; color: #212121;}
+.xmlcd .contentBox .tablist li a { display: block; text-align: center; height: 40px; line-height: 40px; font-size: 14px;}
+.xmlcd .contentBox .tablist li.tab-active { color: #fff; background: #fff;}
+.xmlcd .contentBox .content { text-align: center;}
+.xmlcd .contentBox .content .one {}
+.xmlcd .contentBox .content .two { display: none;}
 
 
 

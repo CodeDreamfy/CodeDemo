@@ -1,13 +1,31 @@
+$(function(){
+  var timer;
+  var $xmintro = $('.container .xmintro .contentBox');
+  var $win = $(window);
+  var wintop = $win.scrollTop();
+  $(window).on('scroll', function(){
+    if(timer){
+      clearInterval(timer);
+    }
+    var h = $win.scrollTop();
+    timer = setTimeout(function(){
+      if($xmintro.offset().top-h <= 200 || h > ($xmintro.offset().top +( $win.height()))){
+        $xmintro.find('.over-body').addClass('end');
+      }
+    }, 400);
+  })
+})
+
 +function(){
   var $xmSlideWrap = $('#xmSlideWrap'),
       $xmSlideControl = $('.xmSlideControl', $xmSlideWrap),
       $pagination = $('.pagination', $xmSlideWrap),
       $slideTitle = $('.slide-title', $xmSlideWrap);
-  var arrTitle = ['双网通 2999元 | 全网通 3099元','标准版 1799 元起','天然竹特别版 1799 元','女神版 1799 元'];
+  var title = ['双网通 2999元 | 全网通 3099元','标准版 1799 元起','天然竹特别版 1799 元','女神版 1799 元'];
   var _index=0,slideTime;
   var $xmSlideList = $xmSlideControl.children();
   var $paginationList = $pagination.find('a');
-  var title =['双网通 2999元 | 全网通 3099元','标准版 1799 元起','天然竹特别版 1799 元','女神版 1799 元'];
+
   $xmSlideList.eq(_index).show();
   $pagination.find('a').eq(_index).addClass('active').siblings().removeClass('active');
   $slideTitle.html(title[_index]);
@@ -76,5 +94,6 @@
       $xmSlideList.eq(_index).fadeIn('slow');
     },3000);
   }
+
 
 }()

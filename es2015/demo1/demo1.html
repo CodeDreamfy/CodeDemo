@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>demo1</title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript" src="http://cdn.staticfile.org/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <script type="text/javascript" src="../lib/browser.js"></script>
+  <script type="text/javascript" src="../lib/vue.js"></script>
+  <script type="text/babel" src="main.js"></script>
+  <style type="text/css" media="screen">
+    input { outline: 0; color: #000; width: 260px; padding: 10px; line-height: 22px; height: 22px; border: 0; background: #f1f1f1;}
+    input.classA { font-weight: bold; background: #f0f00f;}
+    #app ul { list-style: none; margin: 10px 0;padding: 0;}
+    #app ul li { width: 280px; height: 32px; padding: 10px 0;}
+    #app ul li span { float: left; line-height: 32px;}
+    #app ul li:nth-child(odd) { background: #f1f1f1;}
+    #app ul li span em { font-size: 22px; padding-right: 10px;}
+    #app ul li button { float: right; position: relative; top: 5px;}
+    .addTransition {transition: }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <p>
+      <span>Message is: {{ message }}</span><br>
+      <input type="text" v-model="message" /*lazy*/ debounce="800" placeholder="请输入名字">
+    </p>
+    <input v-model="newTodo" placeholder="请输入todolist" :class="{ 'classA': isA }" @focus="addClass" @blur="removeClass" @keyup.enter="addTodo">
+    <ul>
+      <li v-for="(index, todo) in todos | orderBy order<0 " transition="addTransition">
+        <span><em>{{ index+1 }}:</em>{{todo.text}}</span>
+        <button @click="removeTodo($index)">X</button>
+      </li>
+    </ul>
+    <h1 v-if="flag">
+      <p>你刚刚添加了一条记录</p>
+    </h1>
+    <h1 v-else>
+      <p>请添加~~</p>
+    </h1>
+    <p>计数：{{ len }}个</p>
+  </div>
+  <div id="example"> <my-component></my-component></div>
+</body>
+</html>

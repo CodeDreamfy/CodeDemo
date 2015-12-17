@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>background:cover|contain</title>
+  <style type="text/css" media="screen">
+    * { margin: 0; padding: 0;}
+    body { margin-bottom: 100px;}
+    .wrap { width: 1236px; margin: 0 auto; background: #f5f5f5;}
+    h3 { margin: 10px 0;}
+    .one,.two,.three { float: left; width: 400px;}
+    .two,.three { margin-left: 10px;}
+    .onebox { width: 400px; height: 400px; background: url(images/1.jpeg) no-repeat; border: 1px solid #000;}
+    .twobox { width: 400px; height: 400px; background: url(images/2.jpeg) no-repeat; margin-top: 30px; border: 1px solid #000;}
+    .two .onebox { background-size: cover}
+    .two .twobox { background-size: cover}
+    .three .onebox { background-size: contain}
+    .three .twobox { background-size: contain}
+    .picture1 { position: absolute; top: 20px; left: 20px; width: 50px; height: 50px; background: url(images/1.jpeg) no-repeat; background-size: 50px 50px; }
+    .picture2 { position: absolute; top: 90px; left: 20px; width: 50px; height: 50px; background: url(images/2.jpeg) no-repeat; background-size: 50px 50px; }
+    .picture1 .img1, .picture2 .img2 { position: absolute; width: 658px; height: 961px; top: 0; left: 100px; display: none;}
+    .picture2 .img2 { top: -70px; width: 658px; height: 435px;}
+    .picture1:hover .img1, .picture2:hover .img2 { display: block;}
+    .one .wrap1,.one .wrap2 { width: 400px; height: 400px; overflow: hidden; border: 1px solid #000;}
+    .one .wrap2 { margin-top: 30px}
+    .one .onebox1,
+    .one .twobox2 { width: 100%; height: 100%; background: url(images/1.jpeg) no-repeat;overflow: hidden;}
+    .one .twobox2 { background: url(images/2.jpeg) no-repeat;}
+    .clear { clear: both;}
+  </style>
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<a class="picture1" href="javascript:;"><img src="images/1.jpeg"  class="img1"></a>
+<a class="picture2" href="javascript:;"><img src="images/2.jpeg"  class="img2"></a>
+<div class="wrap">
+<h3>所有div的大小是：400*400；背景1图片大小:658*961，背景2图片大小:658*435<br>cover:调整背景图片的宽度或高度（较小者），以铺满整个元素<br>contain:调整背景图片的宽度或高度（较大者），使背景图片完全包含在元素中</h3>
+  <div class="one">
+    <h1>FullImg js计算</h1>
+    <div class="wrap1"><div class="onebox1"></div></div>
+    <div class="wrap2"><div class="twobox2"></div></div>
+  </div>
+  <div class="two">
+    <h1>cover</h1>
+    <div class="onebox"></div>
+    <div class="twobox"></div>
+  </div>
+  <div class="three">
+    <h1>contain</h1>
+    <div class="onebox"></div>
+    <div class="twobox"></div>
+  </div>
+  <div class="clear"></div>
+</div>
+<script>
+  function fullimg(scales,ele){
+    var imgScale = scales;
+    var $wrap = ele;
+    var divWidth = 400;
+    var divHeight = 400;
+    var divScale = 1;
+    if( divScale < imgScale ){
+      var w = Math.ceil(divHeight*imgScale);
+      $wrap.css({height: divHeight, width: w, marginLeft: (-w/2), marginTop: (-divHeight/2)});
+    }else {
+      var h = Math.ceil(divWidth/imgScale);
+      $wrap.css({height: h, width: divWidth, marginLeft: (-divWidth/2), marginTop: (-h/2)});
+    }
+  }
+  var eleOnea = $('.one .onebox'),
+      eleOneb = $('.one .onebox');
+  var sca = 658/961,
+      scab = 658/435;
+  fullimg(sca,eleOnea);
+  fullimg(scab,eleOneb);
+</script>
+</body>
+</html>

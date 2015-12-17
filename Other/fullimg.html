@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>fullimg</title>
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <style type="text/css" media="screen">
+    *{ margin: 0;padding: 0;}
+    html,body { height: 100%;}
+    body { overflow: hidden;}
+    .wrap{position: absolute;top:50%;left:50%;display: block;}
+  </style>
+</head>
+<body>
+  <img class="wrap" src="images/bg.jpg"/>
+<script>
+  function fullimg(){
+    var imgScale = 1920/800;
+    var $wrap = $('.wrap');
+    var bodyWidth = $(window).width();
+    var bodyHeight = $(window).height();
+    var bodyScale = bodyWidth/bodyHeight;
+    if( bodyScale < imgScale ){
+      var w = Math.ceil(bodyHeight*imgScale);
+      $wrap.css({height: bodyHeight, width: w, marginLeft: (-w/2), marginTop: (-bodyHeight/2)});
+    }else {
+      var h = Math.ceil(bodyWidth/imgScale);
+      $wrap.css({height: h, width: bodyWidth, marginLeft: (-bodyWidth/2), marginTop: (-h/2)});
+    }
+  }
+  window.onresize = function(){
+    fullimg();
+  }
+</script>
+</body>
+</html>
