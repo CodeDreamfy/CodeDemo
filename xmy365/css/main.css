@@ -221,7 +221,7 @@ input,button { border: 0; padding:0; outline: 0;}
 /* imported-fruit */
 .main .m-common { margin-top: 30px; border-top: 2px solid #6fba2c;}
 .main .m-common div.title { margin: -15px 0 0 -43px; width: 221px; height: 472px;}
-.main .m-common .title .category { left: 45px; top: 190px; width: 160px;}
+.main .m-common .title .category { left: 58px; top: 190px; width: 160px;}
 .main .m-common .title .category a { display: inline-block; padding: 0 10px; margin: 0 4px 5px 0; background: #85c84c; border-radius: 8px; color: #fff; line-height: 20px;}
 .main .m-common .title .category a:hover{ background: #4e9310;}
 .main .m-common .listwrap { width: 1012px; overflow: hidden;}
@@ -248,11 +248,11 @@ input,button { border: 0; padding:0; outline: 0;}
 .main .domestic-fruit div.title .category a:hover { background: #d17000;}
 .main .german-imports { border-top: 2px solid #005ebf;}
 .main .german-imports div.title { margin-top: -17px; width: 221px; height: 464px; background: url(../images/german-imports/title.png) no-repeat;}
-.main .german-imports div.title .category { left: 58px;}
 .main .german-imports div.title .category a { background: #207acd;}
 .main .german-imports div.title .category a:hover { background: #0057a8;}
 .main .dry-fruit { border-top: 2px solid #d27362;}
 .main .dry-fruit div.title {  margin: -16px 0 0 -35px; width: 213px; height: 487px; background: url(../images/dry-fruit/title.png) no-repeat;}
+.main .dry-fruit div.title .category { left: 45px;}
 .main .dry-fruit div.title .category a { background: #e69c8c;}
 .main .dry-fruit div.title .category a:hover { background: #a04b39;}
 .main .subsidiary-food { border-color: #caa846;}
@@ -262,6 +262,7 @@ input,button { border: 0; padding:0; outline: 0;}
 .main .subsidiary-food div.title .category a:hover { background: #97770f;}
 .main .articles { border-color: #00a496;}
 .main .articles div.title { margin: -15px 0 0 -33px; width: 207px; height: 463px;  background: url(../images/articles/title.png) no-repeat;}
+.main .articles div.title .category { left: 45px;}
 .main .articles div.title .category a  { background: #00a496;}
 .main .articles div.title .category a:hover { background: #00493b;}
 .main .drinks { border-color: #905F9E;}
