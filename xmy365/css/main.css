@@ -21,6 +21,9 @@ input,button { border: 0; padding:0; outline: 0;}
 .wrap { width: 1190px; margin: 0 auto;}
 .icon { background: url(../images/ico2.png) no-repeat;}
 .dhicon { background: url(../images/dhicon.png) no-repeat; }
+.hoverLeft { transition: transform .2s linear; -webkit-transition: -webkit-transform .2s linear; overflow: hidden;}
+.hoverLeft:hover { transform: translateX(-6px); -webkit-transform: translateX(-6px);}
+
 
 /* header */
 #header .top { height: 30px; border-bottom: 1px solid #e5e5e5; background: #f2f2f2; color: #999;}
@@ -231,8 +234,8 @@ input,button { border: 0; padding:0; outline: 0;}
 .main .m-common .listwrap .bussinesslist a img { width: 197px;}
 .main .m-common .listwrap .bussinesslist a:hover i { top: 10px; right: 10px; width: 13px; height: 13px; background: url(../images/ico2.png) no-repeat 0 -560px; position: absolute;}
 .main .m-common .listwrap .bussinesslist a:last-child { border-bottom: none;}
-.main .m-common .listwrap ul li { float: left; width: 162px; padding-bottom: 8px; border-top: 1px solid #e5e5e5; border-right: 1px solid #e5e5e5;}
-.main .m-common .listwrap ul li>span { display: block; text-align: center;}
+.main .m-common .listwrap ul li { float: left; width: 162px; padding-bottom: 8px; border-top: 1px solid #e5e5e5; border-right: 1px solid #e5e5e5; overflow: hidden;}
+.main .m-common .listwrap ul li>span { display: block; text-align: center; }
 .main .m-common .listwrap ul li>span>img { width: 160px; height: 148px;}
 .main .m-common .listwrap ul li .title { padding: 3px 10px; height: 35px; overflow: hidden;}
 .main .m-common .listwrap ul li .title a { color: #666; }
@@ -311,7 +314,6 @@ input,button { border: 0; padding:0; outline: 0;}
 .main .specialty .elem .desc a:hover { text-decoration: underline;}
 .main .specialty .elem .price { height: 21px; line-height: 21px; font-size: 14px; font-weight: 700; color: #e4393c; text-align: left; padding: 0 10px;}
 .main .specialty .elem .price s { float: right; color: #666; text-align: right; font-size: 12px; color: #999; margin-right: 2px;}
-
 
 
 

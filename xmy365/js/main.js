@@ -50,5 +50,8 @@ $(function(){
     $(this).addClass('active');
     $(this).parent().next().children().eq(_index).show().siblings().hide();
   });
-
+  var $mCommon = $('.m-common');
+  $hotShopItemWrap.find('.shoplist .shopImg').addClass('hoverLeft');
+  $specialty.find('.item .showimg').addClass('hoverLeft');
+  $mCommon.find('.listwrap .items li>span').addClass('hoverLeft');
 });
