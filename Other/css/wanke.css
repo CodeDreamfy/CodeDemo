@@ -1,0 +1,35 @@
+/* reset */
+* { margin: 0; padding: 0;}
+ul,li,h1,h2,h3,ol { margin: 0; padding: 0;}
+ul { list-style: none;}
+img { border :none;}
+a { text-decoration: none; color: #fff;}
+
+/* utils */
+.fl { float: left;}
+.fr { float: right;}
+.rel { position: relative;}
+.abs { position: absolute;}
+.clearfix:after { content: ' '; display: table; clear: both;}
+
+/* commom */
+.box { height: 80px; border-bottom: 1px solid #444;}
+.wrap { width: 1130px; margin: 0 auto;}
+
+.wrap .logo a { width: 151px; height: 80px; background: url(../images/wanke-logo.png) no-repeat center center; display: block;}
+.wrap .navlist a { display: inline-block; padding: 0 30px; height: 80px; line-height: 80px; color: #666; font-size: 13px;}
+.wrap .navlist a.active,
+.wrap .navlist a:hover { background: #ff0000; color: #fff;}
+
+.wrap .sencondlist { width: 100%; top: 80px; left: 0;}
+.wrap .sencondlist .item { background: #4c4a4f; height: 80px;}
+.wrap .sencondlist .item a { display: inline-block; padding: 0 20px; font-size: 13px;}
+
+
+
+
+
+
+
+
+

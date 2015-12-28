@@ -42,4 +42,13 @@ $(function(){
     $(this).addClass('active');
     $hotShopItemWrap.children().hide().eq(_index).fadeIn();
   });
+
+  var $specialty = $('.specialty');
+  $specialty.on('mouseenter', '.tablist a', function(){
+    var _index = $(this).index();
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
+    $(this).parent().next().children().eq(_index).show().siblings().hide();
+  });
+
 });

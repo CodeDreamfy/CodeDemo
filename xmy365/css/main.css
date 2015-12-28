@@ -250,7 +250,7 @@ input,button { border: 0; padding:0; outline: 0;}
 .main .german-imports div.title { margin-top: -17px; width: 221px; height: 464px; background: url(../images/german-imports/title.png) no-repeat;}
 .main .german-imports div.title .category a { background: #207acd;}
 .main .german-imports div.title .category a:hover { background: #0057a8;}
-.main .dry-fruit { border-top: 2px solid #d27362;}
+.main .dry-fruit { border-top: 2px solid #d27362; }
 .main .dry-fruit div.title {  margin: -16px 0 0 -35px; width: 213px; height: 487px; background: url(../images/dry-fruit/title.png) no-repeat;}
 .main .dry-fruit div.title .category { left: 45px;}
 .main .dry-fruit div.title .category a { background: #e69c8c;}
@@ -270,8 +270,47 @@ input,button { border: 0; padding:0; outline: 0;}
 .main .drinks div.title .category a  { background: #a67eb1;}
 .main .drinks div.title .category a:hover { background: #825190;}
 
+.main .specialty { width: 1210px; padding-left: 20px; box-sizing: border-box; height: 462px; background: url(../images/specialty/tc.png) no-repeat; margin: 30px 0 0 -20px;}
+.main .specialty .tablist { height: 222px;}
+.main .specialty .item { height: 221px; background: #fff; display: none;}
+.main .specialty .item1 { display: block;}
+.main .specialty .item .elem { overflow: hidden; float: left; width: 25%; height: 221px; border-right: 1px solid #e5e5e5; box-sizing: border-box;}
+.main .specialty .item .elem:last-child { border-right: none;}
+.main .specialty .tablist a { position: absolute; background: url(../images/ico2.png) no-repeat;}
+.main .specialty .imported,
+.main .specialty .cq { width: 555px; padding: 0 20px; }
+.main .specialty .cq .tablist a { background-position: 0 -207px; width: 54px; height: 107px; box-sizing: border-box; padding-top: 87px; text-align: center; color: #fff;}
 
+.main .specialty .cq .tablist a:hover,
+.main .specialty .cq .tablist a.active { background-position: -76px -207px; }
+.main .specialty .cq .tablist a.key1 { left: 53px; top: 91px;}
+.main .specialty .cq .tablist a.key2 { left: 153px; top: 100px;}
+.main .specialty .cq .tablist a.key3 { left: 254px; top: 102px;}
+.main .specialty .cq .tablist a.key4 { left: 351px; top: 97px;}
+.main .specialty .cq .tablist a.key5 { left: 449px; top: 86px;}
 
+.main .specialty .imported .tablist a { color: #fff; text-align: center; box-sizing: border-box;}
+.main .specialty .imported .tablist a.b1 { width: 62px; height: 72px; background-position: 3px -328px; padding-top: 20px;}
+.main .specialty .imported .tablist a.b1.active { background-position: -69px -328px;}
+.main .specialty .imported .tablist a.b2 { width: 53px; height: 65px; background-position: 0 -414px; padding-top: 16px;}
+.main .specialty .imported .tablist a.b2.active { background-position: -72px -414px;}
+.main .specialty .imported .tablist a.b3 { width: 42px; height: 50px; background-position: -6px -492px; padding-top: 11px;}
+.main .specialty .imported .tablist a.b3.active { background-position: -78px -492px; }
+
+.main .specialty .imported .tablist a.key1 { top: 89px; left: 45px;}
+.main .specialty .imported .tablist a.key2 { top: 63px; left: 132px;}
+.main .specialty .imported .tablist a.key3 { top: 72px; left: 200px;}
+.main .specialty .imported .tablist a.key4 { top: 28px; left: 278px;}
+.main .specialty .imported .tablist a.key5 { top: 48px; left: 360px;}
+.main .specialty .imported .tablist a.key6 { top: 45px; left: 441px;}
+.main .specialty .imported .tablist a.key7 { top: 80px; left: 508px;}
+
+.main .specialty .elem .showimg { display: block; height: 150px; text-align: center; }
+.main .specialty .elem .showimg img { width: 135px; height: 150px;}
+.main .specialty .elem .desc { height: 35px; overflow: hidden; color: #666; padding: 5px 10px;}
+.main .specialty .elem .desc a:hover { text-decoration: underline;}
+.main .specialty .elem .price { height: 21px; line-height: 21px; font-size: 14px; font-weight: 700; color: #e4393c; text-align: left; padding: 0 10px;}
+.main .specialty .elem .price s { float: right; color: #666; text-align: right; font-size: 12px; color: #999; margin-right: 2px;}
 
 
 
