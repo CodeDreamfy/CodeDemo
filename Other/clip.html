@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <style type="text/css" media="screen">
+    .box { margin: 100px auto; width: 200px; height: 200px; background: rgba(0,0,0,.1); box-shadow: 0 0 0 2px; position: relative;}
+    .box:after,.box:before { color: blue; animation: clipMe 8s linear infinite; margin: -10px; content: ''; position: absolute; top: 0; left: 0; bottom: 0; right: 0; box-shadow: inset 0 0 0 2px;}
+    .box:before {animation-delay: -4s;}
+    @keyframes clipMe {
+      0%, 100% {
+          clip: rect(0px, 220px, 2px, 0px);
+      }
+      25% {
+          clip: rect(0px, 2px, 220px, 0px);
+      }
+      50% {
+          clip: rect(218px, 220px, 220px, 0px);
+      }
+      75% {
+          clip: rect(0px, 220px, 220px, 218px);
+      }
+   }
+  </style>
+</head>
+<body>
+  <div class="box">
+  </div>
+</body>
+</html>

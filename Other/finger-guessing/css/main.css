@@ -1,0 +1,53 @@
+/* reset */
+html,body,.wrap { margin: 0; padding: 0; height: 100%;} 
+a { color: #000; font-size: 30px; text-decoration: none;}
+i,em { font-style: normal;}
+/* utils */
+.rel { position: relative;}
+.abs { position: absolute;}
+.fl { float: left;}
+.fr { float: right;}
+.clearfix:after { content: ''; display: table; clear: both;}
+.blur {   
+    -webkit-filter: blur(10px); /* Chrome, Opera */
+       -moz-filter: blur(10px);
+        -ms-filter: blur(10px);   
+            filter: blur(10px);   
+}
+/* common */
+.wrap section { position: relative; overflow: hidden; font-size: 24px;  width: 100%; height: 100%;}
+.wrap .s1 { display: block; background: url(../images/1.jpeg) no-repeat; background-size: cover;}
+.wrap .s2 { display: none;}
+.wrap .s3 { display: none;}
+.wrap section .blurwrap { width: 100%; height: 100%; background: url(../images/1.jpeg) no-repeat; background-size: cover; top: 0; left: 0; z-index: 1;}
+.wrap .btnwrap { width: 100%; height: 260px; bottom: 130px; left: 0; z-index: 1;}
+.wrap .btnwrap .btn { color: #000; width: 320px; margin: 0 auto; height: 80px; line-height: 80px; font-size: 40px; display: block; border-radius: 12px; background: #fcc; color: #fff; text-align: center; transition: all 1.5s;}
+.wrap .btnwrap .coupe { margin-top: 50px;}
+.wrap .btnwrap .btn:hover { background: #fc1;}
+
+.overlay { width: 100%; height: 100%; background: #fff; opacity: .8; top: 0; left: 0; z-index: 5; display: none;}
+.overlay .result { position: absolute; width: 100%; height: 160px; font-weight: 700; font-size: 100px; z-index: 10; top: 20%; left: 0; text-align: center;}
+.overlay .winner { color: red;}
+.overlay .draw { color: green;}
+.overlay .loster {color: #444;}
+/* s2 */
+.wrap .s2 .content { left: 0; top:28%; left: 0; width: 100%; padding: 10px; background: #fff; opacity: .5; z-index: 2;}
+.wrap .s2 .content span { display: block;}
+.wrap .s2 .content .tips { width: 100%; height: 60px; line-height: 60px; text-align: center; font-size: 40px; font-weight: bold;}
+.wrap .s2 .content .num { width: 420px; margin: 10px auto;}
+.wrap .s2 .content .num i { display: inline-block; position: relative; width: 200px; height: 200px; box-shadow: 0 0 0 2px; background: #f4d172; box-sizing: border-box; text-align: center; font-size: 140px; font-weight: bold; line-height: 200px;}
+.wrap .s2 .content .num i.pc { margin-left: 20px;}
+.wrap .s2 .content .num i em { bottom: -50px; font-size: 16px; left: 0; position: absolute; height: 42px; width: 100%; line-height: 42px; text-align: center; background: #f4d172; box-shadow: 0 0 0 2px; font-size: 25px;}
+.wrap .s2 .content .ranbtn { width: 300px; text-align: center; display: block; height: 60px; line-height: 60px; margin: 100px auto 20px; font-size: 60px; background: #fbc215; border-radius: 12px; padding: 10px 20px; color: #fff; font-weight: bold}
+
+
+
+
+
+
+
+
+
+
+
+

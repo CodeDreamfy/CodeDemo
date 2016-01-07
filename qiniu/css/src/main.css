@@ -1,0 +1,14 @@
+/* reset */
+html,body,h1,h2,h3,p,ul,ol,li { margin: 0; padding: 0;}
+
+
+/* utils */
+.fl { float: left;}
+.fr { float: right;}
+.rel { position: relative;}
+.abs { position: absolute;}
+.clearfix { *zoom: 1;}
+.clearfix:after { content: ''; display: table; clear: both;}
+
+/* common */
+html,body { height: 100%; overflow: hidden;}
