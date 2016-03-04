@@ -1,0 +1,23 @@
+.box { width: 800px; height: 600px; background: #ccc; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+
+/* ui-dialog */
+.ui-slide-dialog .control, .ui-slide-dialog .fullimg { width: 100%; height: auto; }
+.ui-slide-dialog .fullimg { position: absolute; left: 50%; top: 50%; margin-left: -800px; margin-top: -400px; }
+.ui-slide-dialog .text{ text-align: center; height: 80px; width: 100%; background-color: #000; position: absolute; bottom: 0; left: 0; background-repeat: no-repeat; background-position: center center; }
+.ui-slide-dialog { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; z-index: 9999; overflow: hidden; -webkit-animation: dialog .15s ease-in-out; -moz-animation: dialog .15s ease-in-out; -ms-animation: dialog .15s ease-in-out; -o-animation: dialog .15s ease-in-out; animation: dialog .15s ease-in-out; }
+.ui-slide-dialog .swiper-container { }
+.ui-slide-dialog .swiper-wrapper, .ui-slide-dialog .swiper-slide { width: 100%; height: 100%; }
+.ui-slide-dialog .swiper-slide { overflow: hidden; }
+.ui-slide-dialog .control { position: absolute; top: 0; z-index: 10000; display: none; }
+.ui-slide-dialog .control .wrapper { min-width: 1280px; margin: 0 auto; position: relative; height: 100%; }
+.ui-slide-dialog .prev { background: url(../images/dialog/prev.png) no-repeat; width: 74px; height: 70px; position: absolute; top: 0; left: 40px; text-indent: -5000px; }
+.ui-slide-dialog .prev.black { background-image: url(../images/dialog/back-black.png); }
+.ui-slide-dialog .next { background: url(../images/dialog/next.png) no-repeat; width: 77px; height: 70px; position: absolute; top: 0; right: 40px; text-indent: -5000px; }
+.ui-slide-dialog .next.black { background-image: url(../images/dialog/next-black.png); }
+.ui-slide-dialog .close { background: url(../images/dialog/close.png) no-repeat; width: 41px; height: 41px; position: absolute; top: 40px; right: 40px; text-indent: -5000px; }
+.ui-slide-dialog .close.black { background-image: url(../images/dialog/close-black.png); }
+.ui-slide-dialog .page { width: 50px; height: 50px; background: url(../images/dialog/line.png) no-repeat center center; position: absolute; top: 20px; right: 70px; color: #FFF; }
+.ui-slide-dialog .page .now { font-size: 32px; position: absolute; top: 3px; left: 5px; }
+.ui-slide-dialog .page .total { font-size: 16px; position: absolute; top: 25px; left: 27px; }
+.ui-slide-dialog .slide-pager{ position: absolute; z-index: 9; left: 50%;}
+.ui-slide-dialog .slide-pager a{ float: left; }

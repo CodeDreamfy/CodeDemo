@@ -1,0 +1,4 @@
+/* main */
+.main-wrap { width: 1100px; margin: 10px auto;}
+.main-wrap .main { width: 880px; min-height: 300px;}
+.main-wrap .sidebar {  width: 210px; min-height: 300px;}
