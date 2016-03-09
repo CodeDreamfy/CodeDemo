@@ -11,7 +11,11 @@ var mongoose = require('mongoose');
 
 var session = require('express-session');
 mongoose.connect(config.mongodb);
-
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('db open success');
+});
 var app = express();
 
 

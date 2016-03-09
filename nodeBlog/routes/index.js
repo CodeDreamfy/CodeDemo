@@ -1,45 +1,27 @@
-// var express = require('express');
-// var router = express.Router();
-
-// /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
-
-// module.exports = router;
 var User = require('../model/index').User;
+var server = require('../server');
 
 module.exports = function(app,db) {
   app.get('/', function(req, res) {
-    var user = new User({
-      username: 'test',
-      password: '1234',
-      date: new Date()
-    })
-    user.save(function(err, result){
-      if(err) console.log('fail');
-      if(result) console.log('success');
-      return res.render('index', { title: '主页'});
-    });
-
-    User.find({},function(e,r){
-      console.log(e,r)
-    })
-
-
-
+    res.render('index', { title: '主页'});
   });
   app.get('/reg', function(req, res) {
-    res.render('reg', { title: '注册'})
+    res.render('reg', { title: '注册', tips: ''})
   });
   app.post('/reg', function( req, res){
-
+    var falg = server.reg(req,res);
+    if(falg){
+      res.render('login', { title: '登录'})
+    }else {
+      res.render('reg', { title: '注册' ,tips: '存在错误'})
+    }
   });
+
   app.get('/login', function( req, res){
     res.render('login', { title: '登录'})
   });
   app.post('/login', function(req, res){
-
+    server.login(req,res);
   });
   app.get('/post', function( req, res){
     res.render('post', { title: '文章'})
