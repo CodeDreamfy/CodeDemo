@@ -1,0 +1,13 @@
+* { margin: 0; padding: 0;}
+.box { width: 960px; margin: 10px auto; list-style: none; padding: 0;}
+.box li { float: left; width: 200px; position: relative;}
+.box li .shop-item { width: 200px; height: 300px; background: #ccc;}
+.border-animate { position: absolute; background: #5c3d45;}
+.box li .border-left, .box li .border-top { top: 0; left: 0; }
+.box li .border-right,.box li .border-bottom { bottom: 0; right: 0;}
+.box li .border-left, .box li .border-right { width: 1px; height: 0;  transition: height 0.8s;}
+.box li .border-top, .box li .border-bottom { width: 0; height: 1px; transition: width 0.8s;}
+.box li:hover .border-left,
+.box li:hover .border-right { width: 1px; height: 100%;}
+.box li:hover .border-top,
+.box li:hover .border-bottom { height: 1px; width: 100%;}
