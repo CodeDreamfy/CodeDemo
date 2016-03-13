@@ -1,0 +1,19 @@
+* { margin: 0; padding: 0;}
+.wrapBox { width: 1136px;height: 165px; margin: 100px auto; border: 1px solid #f1f1f1; position: relative; overflow: hidden;}
+.wrapBox .item { height: 165px; position: absolute; top: 0; width: 493px;}
+.wrapBox .item1 { background: blue; z-index: 1; left: 0;}
+.wrapBox .item2 { background: yellow; z-index: 2;}
+.wrapBox .item3 { background: orange; z-index: 3;}
+.wrapBox .item4 { background: gray; z-index: 4;}
+
+.staus1 .item2 { left: 212px;}
+.staus1 .item3 { left: 705px;}
+.staus1 .item4 { left: 917px;}
+
+.staus2 .item2 { left: 340px;}
+.staus2 .item3 { left: 617px;}
+.staus2 .item4 { left: 743px;}
+
+.staus3 .item2 { left: 340px;}
+.staus3 .item3 { left: 617px;}
+.staus3 .item4 { left: 743px;}

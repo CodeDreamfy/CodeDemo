@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style media="screen">
+    * { margin:0; padding: 0;}
+    .box { width: 814px; margin: 20px auto; padding-top: 1px;}
+    .box:after { content: ' '; clear: both; display: block; visibility: hidden; height: 0;}
+    .box .empty,
+    .box .remove  { width: 400px; float: left; height: 300px; border: 1px solid #fcc;}
+    .box .remove { float: right;}
+    .btn { width: 800px; margin:30px auto 0; height: 30px;}
+    .btn a { width: 100px; height: 30px; line-height: 30px; border-radius: 10px; background: #ccc; text-align: center;}
+    .btn .btn1 { float: left;}
+    .btn .btn2 { float: right;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="box">
+      <div class="empty">
+        <p>my name is empty children</p>
+        how are you
+      </div>
+      <div class="remove">
+        <p>my name is remove children</p>
+        hao are you
+      </div>
+    </div>
+  </div>
+  <p class="btn">
+    <a class="btn1" href="javascript:;"> empty</a>
+    <a class="btn2" href="javascript:;"> remove</a>
+  </p>
+
+  <script src="../lib/jquery/jquery-2.1.4.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(function(){
+      var $btn1 = $('.btn1');
+      var $btn2 = $('.btn2');
+      var $remove = $('.remove');
+      var $empty = $('.empty');
+      $btn1.on('click', function(){
+        $empty.empty();
+      })
+      $btn2.on('click', function(){
+        $remove.remove();
+      })
+    })
+  </script>
+
+</body>
+</html>
