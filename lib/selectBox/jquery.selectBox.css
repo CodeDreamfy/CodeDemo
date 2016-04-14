@@ -1,0 +1,52 @@
+/* Dropdown control */
+.selectBox-dropdown { position: relative; text-decoration: none; color: #442812; outline: none; font-size: 12px; height: 20px; vertical-align: middle; display: inline-block; cursor: default; }
+.selectBox-dropdown .selectBox-label {
+  padding: 2px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-left: 10px;
+  line-height: 32px;
+  font-size: 15px;
+  width: 85%!important;
+}
+.selectBox-dropdown .selectBox-arrow {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  width: 12px;
+  height: 9px;
+}
+
+/* Dropdown menu */
+.selectBox-dropdown-menu { position: absolute; z-index: 99999; max-height: 170px; min-height: 1em; font-size: 12px; background: #FFF; overflow: auto; -webkit-overflow-scrolling: touch; }
+
+/* Inline control */
+.selectBox-inline { outline: none; border: solid 1px #BBB; background: #FFF; display: inline-block; overflow: auto; }
+.selectBox-inline:focus { border-color: #666; }
+
+/* Options */
+.selectBox-options, .selectBox-options li, .selectBox-options li a { list-style: none; display: block; cursor: default; padding: 0; margin: 0; }
+.selectBox-options.selectBox-options-top { border-bottom: none; margin-top: 1px; }
+.selectBox-options.selectBox-options-bottom { border-top: none; }
+.selectBox-options li a { line-height: 1.5; padding: 0 10px; white-space: nowrap; overflow: hidden; background: 6px center no-repeat; text-align: left; *margin-left: -15px; }
+.selectBox-options li.selectBox-hover a { background-color: #EEE; }
+.selectBox-options li.selectBox-disabled a { color: #888; background-color: transparent; }
+.selectBox-options li.selectBox-selected a { background-color: #C8DEF4; }
+.selectBox-options .selectBox-optgroup { color: #666; background: #EEE; font-weight: bold; line-height: 1.5; padding: 0 .3em; white-space: nowrap; }
+
+/* Disabled state */
+.selectBox.selectBox-disabled { color: #888 !important; }
+.selectBox-dropdown.selectBox-disabled .selectBox-arrow { opacity: .5; border-color: #666; }
+.selectBox-inline.selectBox-disabled { color: #888 !important; }
+.selectBox-inline.selectBox-disabled .selectBox-options a { background-color: transparent !important; }
+
+/* Default Select */
+.selectBox-dropdown.ui-select-default { height: 22px; background-position: right -145px; margin-left: 10px; }
+.selectBox-dropdown.ui-select-default .selectBox-label { padding: 4px 12px 4px 2px; line-height: 14px !important; }
+.selectBox-dropdown.ui-select-default .selectBox-arrow { width: 10px; height: 8px; background-position: -17px -129px; top: 9px; right: 10px; }
+.selectBox-dropdown.ui-select-default .selectBox-left { width: 10px; height: 22px; background-position: left -121px; left: -10px; }
+
+/* Error */
+.selectBox-dropdown.ui-select-default.error{ background-position: right -316px;  }
+.selectBox-dropdown.ui-select-default.error .selectBox-left{ background-position: 0 -292px; }
