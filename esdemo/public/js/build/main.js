@@ -1,5 +1,6 @@
 'use strict';
 
+require('babel-polyfill');
 $(function () {
   Array.from();
   $('.btn').on('click', function () {
