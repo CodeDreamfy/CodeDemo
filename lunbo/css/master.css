@@ -1,0 +1,5 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+.box { list-style: none; width: 1200px; margin: 20px auto; position: relative; font-family: "helvetica neue",arial,sans-serif; font-size: 14px; color: #444;}
+.box li { position: absolute; width: 236px;}
+.box li img { width: 100%; display: block;}
+.box li .content-txt { height: 67px; background: #f1f1f1;}
