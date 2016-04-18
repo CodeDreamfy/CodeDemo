@@ -1,25 +1,18 @@
 $(function(){
-  var pl = [0,321,642,963];
+  var w = 236,pd = 85;
   var arrh = [0,0,0,0];
   var $box = $(".box");
   for(var i=0; i<ms.length; i++){
 
     var $li = $('<li><img src="#" /><div class="content-txt"></div></li>');
-    if(i <= 3){
-      $li.find('img').attr('src', ms[i].url);
-      $li.css('top', 0);
-      $li.css('left', pl[i]);
-      arrh[i] = ms[i].height + 87;
-    }else if(i > 3){
-      var h_index = arrh.indexOf(Math.min.apply(Math, arrh));
-      $li.find('img').attr('src', ms[i].url);
-      $li.css('top', arrh[h_index]);
-      $li.css('left', pl[h_index]);
-      arrh[h_index] = arrh[h_index] + ms[i].height +87;
-    }
+    var h_index = arrh.indexOf(Math.min.apply(Math, arrh));
+    $li.find('img').attr('src', ms[i].url);
+    $li.css('top', arrh[h_index]);
+    $li.css('left', (w+pd)*h_index);
+    arrh[h_index] = arrh[h_index] + ms[i].height +87;
     $box.append($li);
   }
-  
+
 })
 
 var ms = [
