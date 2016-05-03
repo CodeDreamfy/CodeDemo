@@ -6,3 +6,6 @@ body {
 a {
   color: #00B7FF;
 }
+
+.odiv, .odiv2 { width: 100px; height: 100px; background: #f1f1f1;  position: absolute;}
+.odiv2 { left: 300px;}
