@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jqueryDemo</title>
+
+</head>
+<body>
+
+  <script type="text/javascript">
+  domseval("alert('呵呵')", document);
+  function domseval(code, doc) {
+      doc = doc || document;
+
+      var script = doc.createElement("script");
+
+      script.text = code;
+      doc.head.appendChild(script).parentNode.removeChild(script);
+  }
+  </script>
+</body>
+</html>
