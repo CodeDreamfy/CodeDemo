@@ -20,7 +20,7 @@
     var bodyHeight = $(window).height();
     var bodyScale = bodyWidth/bodyHeight;
     if( bodyScale < imgScale ){
-      var w = Math.ceil(bodyHeight*imgScale);
+      var w = Math.ceil(bodyHeight/imgScale);
       $wrap.css({height: bodyHeight, width: w, marginLeft: (-w/2), marginTop: (-bodyHeight/2)});
     }else {
       var h = Math.ceil(bodyWidth/imgScale);
