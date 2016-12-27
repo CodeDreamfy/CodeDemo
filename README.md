@@ -1,6 +1,9 @@
 #This is CodeDreamfy's Blog
 __自学前端指导书__
 
+###关键字
+
+insertAdjacentHTML
 
 ##One. 基础部分 
 
