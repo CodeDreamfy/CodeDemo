@@ -3,7 +3,7 @@ __自学前端指导书__
 
 ###关键字
 
-insertAdjacentHTML
+insertAdjacentHTML，web components
 
 ##One. 基础部分 
 
