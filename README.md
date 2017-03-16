@@ -1,15 +1,15 @@
-#This is CodeDreamfy's Blog
+# This is CodeDreamfy's Blog
 __自学前端指导书__
 
-###关键字
+### 关键字
 
 insertAdjacentHTML，web components
 
-##One. 基础部分 
+## One. 基础部分 
 
 * 面试所有需要掌握的知识点，每日一问［Wiki］
 
-###书籍
+### 书籍
 *	ECMAScript部分(Core JavaScript & BOM & DOM)
 	*	javascript权威指南
 		*	词法结构
@@ -48,7 +48,7 @@ insertAdjacentHTML，web components
 	*	html5等
 	*	待续
 
-###技能学习
+### 技能学习
 *	Git & GitHub使用(Wiki)
 *	前端自动化工具
 	*	gulp
@@ -95,7 +95,7 @@ insertAdjacentHTML，web components
 	*	图片压缩
 
 	
-###工作常用的插件/库／框架
+### 工作常用的插件/库／框架
 *	插件
 	*	videojs
 	*	bxslide
