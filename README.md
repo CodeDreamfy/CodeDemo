@@ -2,30 +2,15 @@
 __自学前端指导书__
 
 ### 关键字
-
 insertAdjacentHTML，web components
 
-## One. 基础部分 
+### post
+* [总结常用js代码段](https://github.com/CodeDreamfy/CodeDemo/issues/18)
 
-* 面试所有需要掌握的知识点，每日一问［Wiki］
 
 ### 书籍
 *	ECMAScript部分(Core JavaScript & BOM & DOM)
 	*	javascript权威指南
-		*	词法结构
-		*	类型、值和变量
-		*	表达式和运算符
-		*	语句
-		*	对象
-		*	数组
-		*	函数
-		*	正则表达式
-		*	web浏览器中的JavaScript
-		*	window对象
-		*	脚本话文档
-		*	脚本化css
-		*	事件处理
-		*	脚本化HTTP
 	*	javascript 秘密花园
 	*	javascript 语言精髓
 	*	javascript 代码段
@@ -101,7 +86,7 @@ insertAdjacentHTML，web components
 	*	bxslide
 	*	fullpage
 	*	myCutomScroll
-	*	swiper2,3
+	*	swiper3,4
 	*	fancybox
 	*	懒加载
 *	库
@@ -114,6 +99,10 @@ insertAdjacentHTML，web components
 	*	backbone.js
 	*	ember.js
 	*	Angular.js
+	*       Vue
+*       脚手架
+	*	webpack
+	*	gulp
 
 
 
