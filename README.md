@@ -1,6 +1,12 @@
 # This is CodeDreamfy's Blog
 __自学前端指导书__
 
+### 最近需要了解关注的技术
+
+* Tailwind CSS
+* vite2
+* typescript
+
 ### 关键字
 insertAdjacentHTML，web components
 
@@ -95,13 +101,17 @@ insertAdjacentHTML，web components
 	*	underscore.js
 	*	jquery
 	*	Lo-Dash
+	*	Tailwind CSS
+	*	typescript
 *	框架
-	*	backbone.js
-	*	ember.js
+	*	Vue3
+	*	react.js
 	*	Angular.js
-	*       Vue
+	*       backbone.js
+	*       ember.js
 *       脚手架
 	*	webpack
+	*	vite2
 	*	gulp
 
 
